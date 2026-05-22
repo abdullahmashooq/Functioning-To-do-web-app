@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>To-Do List | Front End Practice</title>
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+   document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="todo-app">
+  <div class="app-header">
+    <div class="header-top">
+      <h1>to-do list</h1>
+      <button id="theme-toggle" class="theme-btn">🌙</button>
+    </div>
+    <div class="sub">Organize your daily tasks</div>
+  </div>
+
+  <div class="add-task-section">
+    <div class="input-group">
+      <input type="text" id="taskInput" placeholder="Write a new task... e.g., 'Finish project' " autocomplete="off">
+      <button class="add-btn" id="addTaskBtn">+ Add task</button>
+    </div>
+  </div>
+
+  <div class="stats-filter-bar">
+    <div class="task-counter" id="taskCounter">
+      <span id="tasks">0</span> tasks
+    </div>
+    <div class="filter-buttons">
+      <button class="filter-btn active" id="filterAll" title="All Tasks">All</button>
+      <button class="filter-btn" id="filterActive" title="Active Tasks">Active</button>
+      <button class="filter-btn" id="filterCompleted" title="Completed Tasks">Completed</button>
+    </div>
+    <button id="clearCompletedBtn" class="clear-completed-btn">
+      🧹 Clear Completed
+    </button>
+  </div>
+
+  <div class="tasks-container">
+    <ul class="todo-list" id="todoListContainer"></ul>
+  </div>
+
+  <div class="footer-note"></div>
+</div>
+
+<div id="customAlertModal" class="alert-modal-overlay alert-modal-hidden">
+  <div class="alert-modal-card">
+    <div class="alert-modal-icon">⚠️</div>
+    <h3>Empty Task!</h3>
+    <p>Please enter a task before adding it to your list.</p>
+    <button id="closeAlertBtn" class="alert-modal-btn">Got It</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
