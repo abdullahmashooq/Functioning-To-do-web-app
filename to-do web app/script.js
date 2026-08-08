@@ -11,6 +11,7 @@ const clearCompletedBtn = document.getElementById("clearCompletedBtn");
 const filterAll = document.getElementById("filterAll");
 const filterActive = document.getElementById("filterActive");
 const filterCompleted = document.getElementById("filterCompleted");
+const deleteAll = document.getElementById("deleteAll");
 let currentFilter = "All";
 
 function TaskCounter() {
@@ -99,7 +100,20 @@ themeToggleBtn.addEventListener('click', () => {
   localStorage.setItem('theme', newTheme); 
 });
 
+deleteAll.addEventListener("click",()=>{
 
+ if(confirm("Are you sure want to delete all ?")){
+      let AllTasks = todoListContainer.querySelectorAll(".todo-item");
+
+    AllTasks.forEach((Task)=>{
+                Task.remove();
+    })
+        TaskCounter();
+        localStorageData();
+        FilterTasks(currentFilter); 
+ }
+  
+})
 
 function createTask(taskText, isChecked, isInitialization = false,TaskTime = "") {
 
