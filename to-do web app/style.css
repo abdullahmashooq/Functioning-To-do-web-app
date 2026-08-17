@@ -528,6 +528,38 @@ body {
 button {
   cursor: pointer;
 }
+/* ---------------------------------------------- */
+#deleteAll{
+     background-color: transparent;
+  border: 1px solid var(--border-dashed);
+  padding: 0.35rem 1rem;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-sub);
+  transition: all 0.2s ease;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 8px; 
+}
+#deleteAll:hover {
+  background-color: #ffe8e8; 
+  border-color: #f5c2c2;
+  color: #b13e3e;
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] #deleteAll:hover {
+  background-color: #7f1d1d;
+  border-color: #b91c1c;
+  color: #fca5a5;
+}
+
+#deleteAll:active {
+  transform: translateY(1px);
+}
 
 
 .alert-modal-hidden {
@@ -655,4 +687,3 @@ button {
     margin: 0 1.2rem 0.8rem 1.2rem;
   }
 }
-
